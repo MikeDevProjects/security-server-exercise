@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+require('dotenv').config();
 // const morgan = require('morgan');
 // const winston = require('winston');
 // const helmet = require('helmet');
@@ -33,4 +34,4 @@ app.post('/secret', (req, res) => {
   }
 })
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'));
+app.listen(process.env.PORT, () => console.log(`Example app listening on port ${process.env.PORT}!`));

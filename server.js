@@ -8,7 +8,18 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
+
+const whiteList = ['http://example1.com', 'http://example2.com', 'https://mikedevprojects.github.io'];
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (whiteList.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}
+app.use(cors(corsOptions));
 // app.use(morgan('tiny'));
 // app.use(helmet());
 

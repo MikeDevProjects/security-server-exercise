@@ -7,7 +7,7 @@ To run the server:
 3. Run `npm start`
 
 # bcrypt example
-Example of hashing password and comparing it with bcrypt library.
+Example of hashing and comparing passwords using bcrypt.
 
 To try out:
 1. Open bcrypt-example directory
